@@ -10,6 +10,10 @@
 
 > 2017-12-29 ： 增加更新自动化运行脚本，感谢github上的binderclip
 
+> 2017-12-30 : 请将安卓手机的usb调试模式打开，》开发者选项》USB调试
+
+> 2017-12-30 ： 根据大家反馈：1080屏幕距离系数**1.393**,2k屏幕为**1**
+
 
 ## 游戏模式
 
@@ -37,7 +41,7 @@
 ## 依赖安装
 
 ``` bash
-pip install -r requirements.txt
+    pip install -r requirements.txt
 ```
 
 ## 原理说明
@@ -66,12 +70,20 @@ pip install -r requirements.txt
 4. 依次点击起始位置和目标位置，实现蓄力一跳
 5. 打开 `python3 wechat_jump_iOS_py3.py`，根据蓄力一跳的精准情况更改其中的 `time_coefficient`，直到获得最佳取值
 
+## 安卓手机操作步骤
+
+- 安卓手机打开USB调试，设置》开发者选项》USB调试
+- 电脑与手机USB线连接，确保执行`adb devices`可以找到设备id
+- 界面转至微信跳一跳游戏，点击开始游戏
+- 运行`python wechat_jump_auto.py`，如果手机界面显示USB授权，请点击确认
+
+
 ## 实验结果
 
 ![](https://ws1.sinaimg.cn/large/c3a916a7gy1fmxel5dkxvj20u01hcmzx.jpg)
 
 ## TODO 
 
-可以对拉上来的图片进行颜色分割，识别小人和目标中心店，这样就不需要手动点击自动弹跳。
+可以对拉上来的图片进行颜色分割，识别小人和目标中心，这样就不需要手动点击自动弹跳。
 事实证明，机器人比人更会玩儿游戏。
 
